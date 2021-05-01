@@ -47,14 +47,14 @@ def sslCertCheck(domain, port, timeout=None):
         firstCALL(apiURL,apiCALL, domain)
         return responseData
     except ConnectionResetError or ConnectionRefusedError or ssl.SSLCertVerificationError:
-        print(f'SSL Sertifikası bulunamadı veya Sunucuya Bağlanılamamaktadır {domain} \n')
+        print(f'SSL Certificate Not Found or Couldn\'t reach the server {domain} \n')
     except TimeoutError or socket.timeout:
-        print(f'Sunucuya ulaşılamadı {domain}')
+        print(f'Cannot Connect to Server {domain}')
 
 
 def firstCALL(apiURL, apiCALL, domain):
     apiAnalyz= apiURL+ apiCALL[0]+'?host='+ domain
-    print('\nSSL Güvenliği analiz ediliyor... (Biraz zaman alabilir.)')
+    print('\nAnalyzing SSL Security ... (It may take some time.)')
 
     #READY, IN_PROGRESS(--), DNS(2)
     while True:
