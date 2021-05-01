@@ -94,9 +94,9 @@ def secondCALL(apiURL, apiCALL, domain, domainIP):
 
     pprint.pprint(hostInformation)
 
-argParse = argparse.ArgumentParser(description='SSL Güvenliğini kontrol et.')
-argParse.add_argument('-d','--domain', help='Domain\'i ver.')
-argParse.add_argument('-f','--file', help='URL listesini ver.')
+argParse = argparse.ArgumentParser(description='Check SSL VULN')
+argParse.add_argument('-d','--domain', help='Give Domain')
+argParse.add_argument('-f','--file', help='Give URL List')
 parseAllArgument= vars(argParse.parse_args())
 
 oneDomain= parseAllArgument['domain']
